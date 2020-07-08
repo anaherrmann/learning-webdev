@@ -1,0 +1,110 @@
+<html>
+    <head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		
+		<title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <script>
+            // por que deixar por ultimo no body? porque e melhor que o js carrege/execute apos todos os elementos da pagina
+            // se nao pode ser que o js precise de um elemento que nao carregou ainda
+            // javascript
+
+				function exercicioUm(){
+					var endereco = {
+						rua: "Rua dos Pinheiros",
+						numero: 1293,
+						bairro: "Centro",
+						cidade: "Sao Paulo",
+						uf: "SP"
+					};
+
+					return "O usuario mora em " + endereco.cidade + " / " + endereco.uf + " no bairro " + endereco.bairro + ", na rua \"" + endereco.rua + "\" com n " + endereco.numero + ".";
+				}
+
+				function exercicioDois(){
+					return pares(32, 321);
+				}
+
+				function pares(x, y){
+					var arrayPares = [];
+					var j = 0;
+					for(let i = x; i <= y; i++){
+						if(i % 2 === 0){
+							arrayPares[j] = i;
+							j++;
+						}
+					}
+
+					return arrayPares;
+				}
+
+				function exercicioTres(){
+					var habilidades = ["Javascript", "ReactJS", "React Native"];
+					return temHabilidades(habilidades);
+				}
+
+				function temHabilidades(habilidades){
+					for(let i = 0; i < habilidades.length; i++){
+						if(habilidades.indexOf("Javascript", i) !== -1){
+							return true;
+						}
+					}
+					return false;
+				}
+
+				function exercicioQuatro(){
+					var anosEstudo = 1;
+					return experiencia(anosEstudo);
+				}
+
+				function experiencia(anosEstudo){
+					switch(true){
+						case anosEstudo <= 1:
+							return "Iniciante";
+						case anosEstudo <= 3: 
+							return "Intermediario";
+						case anosEstudo <= 6: 
+							return "Avancado";
+						case anosEstudo >= 7:
+							return "Jedi Master";
+					}
+				}
+
+				function exercicioCinco(){
+					var usuarios = [
+						{
+							nome: "Ana",
+							habilidades: ["C", "C++", "C#"]
+						},
+						{
+							nome: "Gabriel",
+							habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+						}
+					];
+
+					return ["O " + usuarios[0].nome + " possui as habilidades: " 
+									+ usuarios[0].habilidades[0] 
+									+ ", "
+									+ usuarios[0].habilidades[1]
+									+ ", "
+									+ usuarios[0].habilidades[2], 
+								"O " + usuarios[1].nome + " possui as habilidades: " 
+									+ usuarios[1].habilidades[0] 
+									+ ", "
+									+ usuarios[1].habilidades[1]
+									+ ", "
+									+ usuarios[1].habilidades[2]];
+				}
+
+				//console.log(exercicioUm());
+				//console.log(exercicioDois());
+				//console.log(exercicioTres());
+				//console.log(exercicioQuatro());
+				//console.log(exercicioCinco()[0] + "\n" + exercicioCinco()[1]);
+        </script>
+    </body>
+
+</html>
